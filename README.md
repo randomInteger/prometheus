@@ -1,3 +1,5 @@
+NOTE:  This is a fork of the great work done by/at:  vegasbrianc/prometheus.  This fork exists only so that I could take vegasbrianc's project and configure it to meet my needs, then have my machines just grab the repo from here.  Please go to vegasbrianc/prometheus for all requests, bug reports, etc...  All work other than some config changes and this note was done by/at:  vegasbrianc/prometheus
+
 # A Prometheus & Grafana docker-compose stack
 Here's a quick start to stand-up a [Prometheus](http://prometheus.io/) stack containing Prometheus, Grafana and Node scraper to monitor your Docker infrastructure. A big shoutout to [philicious](https://github.com/philicious) for kicking this project off!
 
