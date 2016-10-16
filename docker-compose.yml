@@ -14,6 +14,8 @@ services:
   prometheus:
     image: prom/prometheus
     container_name: prometheus
+    mem_limit: 1000000000
+    memswap_limit: 1000000000
     volumes:
       - ./prometheus/:/etc/prometheus/
       - prometheus_data:/prometheus
@@ -36,12 +38,17 @@ services:
   
   node-exporter:
     image: prom/node-exporter
+    mem_limit: 1000000000
+    memswap_limit: 1000000000
     expose:
       - 9100
     networks:
       - back-tier
+      
   alertmanager:
     image: prom/alertmanager
+    mem_limit: 1000000000
+    memswap_limit: 1000000000
     ports:
       - 9093:9093
     volumes: 
@@ -54,6 +61,8 @@ services:
       
   cadvisor:
     image: google/cadvisor
+    mem_limit: 1000000000
+    memswap_limit: 1000000000
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
@@ -68,6 +77,8 @@ services:
   
   grafana:
     image: grafana/grafana
+    mem_limit: 1000000000
+    memswap_limit: 1000000000
     depends_on:
       - prometheus
     ports:
