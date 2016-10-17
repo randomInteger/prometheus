@@ -36,3 +36,4 @@ Use the dashboards in the /dashboards folder, rev6 is a good starting point.
 
 ## Screenshots
 <img src="https://github.com/randomInteger/prometheus/blob/version-2/images/Screen%20Shot%202016-10-17%20at%2012.21.58%20AM.png?raw=true">
+<img src="https://github.com/randomInteger/prometheus/blob/version-2/images/Screen%20Shot%202016-10-17%20at%2012.22.16%20AM.png?raw=true">
