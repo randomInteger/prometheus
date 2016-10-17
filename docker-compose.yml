@@ -44,6 +44,7 @@ services:
       - 9100
     networks:
       - back-tier
+      
   alertmanager:
     image: prom/alertmanager
     mem_limit: 1000000000
