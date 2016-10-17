@@ -23,19 +23,17 @@ services:
       - '-config.file=/etc/prometheus/prometheus.yml'
       - '-storage.local.path=/prometheus'
       - '-storage.local.retention=1h0m0s'
-      - '-alertmanager.url=http://alertmanager:9093'
     expose:
       - 9090
     ports:
       - 9090:9090
     links:
       - cadvisor:cadvisor
-      - alertmanager:alertmanager
     depends_on:
       - cadvisor
     networks:
       - back-tier
-  
+
   node-exporter:
     image: prom/node-exporter
     mem_limit: 1000000000
@@ -44,20 +42,6 @@ services:
       - 9100
     networks:
       - back-tier
-      
-  alertmanager:
-    image: prom/alertmanager
-    mem_limit: 1000000000
-    memswap_limit: 1000000000
-    ports:
-      - 9093:9093
-    volumes: 
-      - ./alertmanager/:/etc/alertmanager/
-    networks:
-      - back-tier
-    command:
-      - '-config.file=/etc/alertmanager/config.yml'
-      - '-storage.path=/alertmanager'
       
   cadvisor:
     image: google/cadvisor
@@ -74,7 +58,7 @@ services:
       - 8080:8080
     networks:
       - back-tier
-  
+
   grafana:
     image: grafana/grafana
     mem_limit: 1000000000
